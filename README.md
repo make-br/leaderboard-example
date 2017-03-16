@@ -119,3 +119,22 @@ Go to `app/view/scores/_form.html.erb` and find this:
   <%= collection_select :score, :player_id, Player.all, :id, :name %> 
 </div>
 ```
+
+Now, if we go to create or edit a player, we should see a helpful dropdown instead of a text field.
+
+Next, if we look at the score in the index or show view, we'll see that it looks something like `<Player:0x123abc>`.
+Let's change that to the player's name.
+
+Got to `app/views/scores/index.html.erb` and `app/views/scores/show.html.erb` and replace instances of `@score.player` or `score.player` with `@score.player.name` or `score.player.name` respectively.
+
+```erb
+<!-- Before -->
+
+<td><%= score.player %></td>
+<%= @score.player %>
+
+<!-- After -->
+
+<td><%= score.player.name %></td>
+<%= @score.player.name %>
+```
