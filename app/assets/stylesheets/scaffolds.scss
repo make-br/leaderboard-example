@@ -47,6 +47,16 @@ input {
   color: #FFB625;
   margin: 10px 0;
   padding: 7.5px;
+  min-width: 250px;
+}
+
+select {
+  background-color: #000;
+  border: 1px solid #FFB625;
+  color: #FFB625;
+  margin: 10px 0;
+  padding: 7.5px;
+  min-width: 250px;
 }
 
 input[type=submit]:hover {

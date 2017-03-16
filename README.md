@@ -97,4 +97,25 @@ rails db:migrate
 Now, we can start our server with `rails server` and visit `localhost:3000/scores`.
 There we can add, edit, view, and delete scores.
 
+When we go to add a new score, the "Player" attribute is set by a text field.
+This is because our Score model uses the id of a Player record to set up this relationship.
+In this field, we can type the id of a Player record to associate it with our score.
 
+To make this a bit more straightforward, let's add a collection select.
+Go to `app/view/scores/_form.html.erb` and find this:
+
+```erb
+<div class="field">
+  <%= f.label :player_id %>
+  <%= f.text_field :player_id %>
+</div>
+```
+
+...and replace it with this:
+
+```erb
+<div class="field">
+  <%= f.label :player_id %>
+  <%= collection_select :score, :player_id, Player.all, :id, :name %> 
+</div>
+```
