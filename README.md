@@ -3,6 +3,8 @@
 This application is a Rails example designed to teach Rails to the Futures Fund Level 2 coding students.
 The application is a leaderboard that keeps track of players and their scores and displays them on a cool dashboard.
 
+![Screenshot of leaderboard](https://raw.githubusercontent.com/TheFuturesFund/leaderboard-example/master/public/screenshot.png)
+
 # Building the app
 
 ## Getting started: Creating a new Ruby on Rails App
