@@ -76,3 +76,25 @@ Next, let's add some custom fonts from [Google Fonts](https://fonts.google.com).
 <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
 <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 ```
+
+# Keeping Score
+
+Now that we have players, let's start keeping track of their scores.
+To do this, we're going to generate another scaffold for scores:
+
+```shell
+rails generate scaffold Score points:integer player:references
+```
+
+If it asks you to overwrite `scaffold.scss`, type `n` and hit Enter to say no.
+
+Adding this new migration implies changes to our database so we'll need to run the migrations:
+
+```shell
+rails db:migrate
+```
+
+Now, we can start our server with `rails server` and visit `localhost:3000/scores`.
+There we can add, edit, view, and delete scores.
+
+
