@@ -77,7 +77,7 @@ Next, let's add some custom fonts from [Google Fonts](https://fonts.google.com).
 <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 ```
 
-# Keeping Score
+## Keeping Score
 
 Now that we have players, let's start keeping track of their scores.
 To do this, we're going to generate another scaffold for scores:
@@ -138,3 +138,52 @@ Got to `app/views/scores/index.html.erb` and `app/views/scores/show.html.erb` an
 <td><%= score.player.name %></td>
 <%= @score.player.name %>
 ```
+
+Now let's sort our Score models by how many points they have.
+We do this by updating the `index` method in `app/controllers/scores_controller.rb`
+
+```ruby
+def index
+  @scores = Score.order(points: :desc)
+end
+```
+
+Now if we look at our list of scores, we should see them sorted by how many points there are.
+Let's put the finishing touch on that view by going to `app/views/scores/index.html.erb` and changing...
+
+```erb
+<h1>Scores</h1>
+```
+
+to...
+
+```erb
+<h1>Leaderboard</h1>
+```
+
+## Routing
+
+Our leaderboard looks pretty good now, but we have to know to go to `/scores` or `/players` to see anything.
+Let's fix that.
+
+First, we'll want to set the root route.
+This is the route that is used when we look at our site without a path.
+We set this by adding a line to `config/routes.rb`.
+
+```ruby
+root to: "scores#index"
+```
+
+Now when we go to `localhost:3000/`, we should see our leaderboard instead of the "Welcome to Rails" screen!
+
+Now, let's add some navigation so we can move between views without changing the URL.
+In `app/views/layouts/application.html.erb`, let's add some links inside the body tag underneath the `<%= yield %>` line.
+
+```erb
+<p>
+  <%= link_to "Player", players_path %> | 
+  <%= link_to "Leaderboard", scores_path %>
+</p>
+```
+
+Now we should see some helpful navigation links in our views!

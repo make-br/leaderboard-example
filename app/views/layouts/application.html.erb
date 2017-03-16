@@ -11,5 +11,9 @@
 
   <body>
     <%= yield %>
+    <p>
+      <%= link_to "Players", players_path %> | 
+      <%= link_to "Leaderboard", scores_path %>
+    </p>
   </body>
 </html>
