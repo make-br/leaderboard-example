@@ -67,7 +67,7 @@ First, let's download the files we need:
 
 ```shell
 curl -o app/assets/stylesheets/scaffolds.scss https://raw.githubusercontent.com/TheFuturesFund/leaderboard-example/master/app/assets/stylesheets/scaffolds.scss
-curl -o public/background.jpg https://raw.githubusercontent.com/TheFuturesFund/leaderboard-example/master/background.jpg
+curl -o public/background.jpg https://raw.githubusercontent.com/TheFuturesFund/leaderboard-example/master/public/background.jpg
 ```
 
 Next, let's add some custom fonts from [Google Fonts](https://fonts.google.com). Go to `app/views/layouts/application.html.erb` and find where the stylesheets are included. There add a line to include fonts:
