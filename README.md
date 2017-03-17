@@ -66,7 +66,7 @@ We have some styles premade.
 First, let's download the files we need:
 
 ```shell
-curl -o app/assets/stylesheets/scaffolds.scss https://raw.githubusercontent.com/TheFuturesFund/leaderboard-example/master/app/assets/stylesheets/scaffolds.css
+curl -o app/assets/stylesheets/scaffolds.scss https://raw.githubusercontent.com/TheFuturesFund/leaderboard-example/master/app/assets/stylesheets/scaffolds.scss
 curl -o public/background.jpg https://raw.githubusercontent.com/TheFuturesFund/leaderboard-example/master/background.jpg
 ```
 
